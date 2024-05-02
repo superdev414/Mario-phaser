@@ -33,6 +33,7 @@ The local development server runs on `http://localhost:8080` by default. Please 
 
 Once the server is running you can edit any of the files in the `src` folder. Webpack will automatically recompile your code and then reload the browser.
 
+<<<<<<< HEAD
 ## Template Project Structure
 
 We have provided a default project structure to get you started. This is as follows:
@@ -77,6 +78,8 @@ After you run the `npm run build` command, your code will be built into a single
 
 In order to deploy your game, you will need to upload *all* of the contents of the `dist` folder to a public facing web server.
 
+=======
+>>>>>>> af6f938 (Update to 3.24.1.)
 ## Customizing the Template
 
 ### Babel
