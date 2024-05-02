@@ -3,6 +3,7 @@
 <<<<<<< HEAD
     "name": "template-webpack",
     "version": "3.1.1",
+<<<<<<< HEAD
 =======
     "name": "template-webpack",
 <<<<<<< HEAD
@@ -11,6 +12,8 @@
 =======
     "version": "3.1.0",
 >>>>>>> db3b8ab (New Phaser version)
+=======
+>>>>>>> f0e5573 (Phaser 3.80.1)
     "main": "src/main.js",
     "scripts": {
         "dev": "webpack-dev-server --config webpack/config.js --open",
@@ -46,6 +49,7 @@
     },
     "dependencies": {
         "phaser": "^3.80.1"
+<<<<<<< HEAD
     }
 }
 =======
@@ -109,6 +113,8 @@
     },
     "dependencies": {
         "phaser": "^3.80.0"
+=======
+>>>>>>> f0e5573 (Phaser 3.80.1)
     }
 }
 >>>>>>> 4ff2702 (Updated with latest template code and examples. Version 3.0.0.)
