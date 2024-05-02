@@ -1,6 +1,7 @@
 # Phaser Webpack Template
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is a Phaser 3 project template that uses webpack for bundling. It supports hot-reloading for quick development workflow and includes scripts to generate production-ready builds.
 
 **[This Template is also available as a TypeScript version.](https://github.com/phaserjs/template-webpack-ts)**
@@ -15,11 +16,16 @@ This template has been updated for:
 ![screenshot](screenshot.png)
 =======
 A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+=======
+A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 5](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+>>>>>>> cf1bd0c (Version 2.0.0 of the Project Template)
 
-This has been updated for Phaser 3.50.0 version and above.
+This has been updated for Phaser 3.60.0 version and above.
 
 Loading images via JavaScript module `import` is also supported, although not recommended.
 >>>>>>> 017481e (Updated to Phaser 3.50 and ES6 syntax)
+
+![Screenshot](example.png)
 
 ## Requirements
 
@@ -30,8 +36,13 @@ Loading images via JavaScript module `import` is also supported, although not re
 | Command | Description |
 |---------|-------------|
 | `npm install` | Install project dependencies |
+<<<<<<< HEAD
 | `npm run dev` | Launch a development web server |
 | `npm run build` | Create a production build in the `dist` folder |
+=======
+| `npm start` | Build project and open web server running project |
+| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) into the `dist` folder |
+>>>>>>> cf1bd0c (Version 2.0.0 of the Project Template)
 
 ## Writing Code
 
@@ -47,6 +58,7 @@ After cloning the repo, run `npm install` from your project directory. Then, you
 After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
 >>>>>>> 017481e (Updated to Phaser 3.50 and ES6 syntax)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Template Project Structure
 
@@ -64,11 +76,17 @@ We have provided a default project structure to get you started. This is as foll
 Webpack supports loading assets via JavaScript module `import` statements.
 
 This template provides support for both embedding assets and also loading them from a static folder. To embed an asset, you can import it at the top of the JavaScript file you are using it in:
+=======
+## Handling Assets
+
+This template provides support for both embedding images and loading them from a static folder. To embed an image, you can import it at the top of the file you are using it in:
+>>>>>>> cf1bd0c (Version 2.0.0 of the Project Template)
 
 ```js
 import logoImg from './assets/logo.png'
 ```
 
+<<<<<<< HEAD
 To load static files such as audio files, videos, etc place them into the `public/assets` folder. Then you can use this path in the Loader calls within Phaser:
 
 ```js
@@ -94,6 +112,23 @@ In order to deploy your game, you will need to upload *all* of the contents of t
 
 =======
 >>>>>>> af6f938 (Update to 3.24.1.)
+=======
+To load static files such as images, audio files, videos, etc place them into the `public/assets` folder. Then you can use this path in the Loader calls within Phaser:
+
+```js
+    preload ()
+    {
+        //  This is an example of a bundled image:
+        this.load.image('logo', logoImg);
+
+        //  This is an example of loading a static image from the public folder:
+        this.load.image('background', 'assets/bg.jpg');
+    }
+```
+
+When you do `npm run build` it will use the copy-webpack-plugin to copy the `public/assets` folder into `dist/assets`. Remember to include this folder when you deploy your game to a server.
+
+>>>>>>> cf1bd0c (Version 2.0.0 of the Project Template)
 ## Customizing the Template
 
 ### Babel
