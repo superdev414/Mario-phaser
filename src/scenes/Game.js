@@ -124,13 +124,9 @@ export class Game extends Scene {
     });
 
     this.physics.add.collider(player, platforms);
-
     this.physics.add.collider(coins, platforms);
-
     this.physics.add.collider(bombs, platforms);
-
     this.physics.add.overlap(player, coins, collectCoin, null, this);
-
     this.physics.add.collider(player, bombs, hitBomb, null, this);
     this.input.once("pointerdown", () => {
       this.scene.start("GameOver");
@@ -141,29 +137,22 @@ export class Game extends Scene {
     if (gameOver) {
       return;
     }
-
     this.physics.world.wrap(player, 0);
-
     bombs.children.each(function (bomb) {
       this.physics.world.wrap(bomb, 0);
     }, this);
 
-    // Movement controls
     if (cursors.left.isDown) {
       player.setVelocityX(-160);
-
       player.anims.play("left", true);
     } else if (cursors.right.isDown) {
       player.setVelocityX(160);
-
       player.anims.play("right", true);
     } else {
       player.setVelocityX(0);
-
       player.anims.play("turn");
     }
 
-    // Jumping
     if (cursors.up.isDown && player.body.touching.down) {
       player.setVelocityY(-333);
     }
@@ -173,7 +162,6 @@ export class Game extends Scene {
 function collectCoin(player, coin) {
   coin.disableBody(true, true);
   collectSound.play();
-
   score += 10;
   scoreText.setText(score.toString());
 
@@ -216,7 +204,6 @@ function hitBomb(player) {
   player.anims.play("turn");
   gameOver = true;
   explosionSound.play();
-
   setTimeout(resetGame.bind(this), 2000);
 }
 

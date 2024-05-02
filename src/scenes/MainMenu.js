@@ -7,9 +7,7 @@ export class MainMenu extends Scene {
 
   create() {
     this.add.image(512, 384, "background");
-
     this.add.image(512, 300, "logo");
-
     this.add
       .text(512, 460, "CLICK TO START", {
         fontFamily: "Arial Black",
