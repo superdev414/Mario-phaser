@@ -73,7 +73,7 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
-    "phaser": "^3.60.0"
+    "phaser": "^3.70.0"
   }
 }
 >>>>>>> 5609708 (Updated to Phaser 3.20.1)
