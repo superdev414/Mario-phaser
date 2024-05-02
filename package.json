@@ -39,7 +39,7 @@
 }
 =======
   "name": "phaser3-project-template",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Phaser 3 Project Template",
   "main": "src/index.js",
   "scripts": {
@@ -62,7 +62,7 @@
     "webpack": "^3.4.1"
   },
   "dependencies": {
-    "phaser": "^3.0.0-beta.16"
+    "phaser": "^3.0.0-beta.20"
   }
 }
 >>>>>>> 04f4219 (Updated minimum build.)
