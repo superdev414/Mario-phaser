@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 # Phaser Webpack Template 🚀
+=======
+# Phaser 3 Webpack Project Template
+
+A Phaser 3 Project Template
+>>>>>>> 73e3a4f (Updated readme.)
 
 Welcome to the Phaser 3 project template using Webpack for efficient asset bundling! Perfect for developers looking to create interactive games with hot-reloading support for a swift development cycle and scripts for building production-ready projects.
 
+<<<<<<< HEAD
 What's Inside? 🎮
 
 - [Phaser 3.80.1](https://github.com/phaserjs/phaser): Cutting-edge game development framework.
@@ -60,3 +67,6 @@ The Phaser logo and characters are &copy; 2011 - 2024 Phaser Studio Inc.
 Created with ❤️ by Phaser Studio. Enjoy building your next great game!
 
 All rights reserved.
+=======
+`npm run build`
+>>>>>>> 73e3a4f (Updated readme.)
