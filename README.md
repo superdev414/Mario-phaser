@@ -1,5 +1,6 @@
 # Phaser Webpack Template
 
+<<<<<<< HEAD
 This is a Phaser 3 project template that uses webpack for bundling. It supports hot-reloading for quick development workflow and includes scripts to generate production-ready builds.
 
 **[This Template is also available as a TypeScript version.](https://github.com/phaserjs/template-webpack-ts)**
@@ -12,6 +13,13 @@ This template has been updated for:
 - [Webpack 5.90.3](https://github.com/webpack/webpack)
 
 ![screenshot](screenshot.png)
+=======
+A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+
+This has been updated for Phaser 3.50.0 version and above.
+
+Loading images via JavaScript module `import` is also supported, although not recommended.
+>>>>>>> 017481e (Updated to Phaser 3.50 and ES6 syntax)
 
 ## Requirements
 
@@ -27,11 +35,17 @@ This template has been updated for:
 
 ## Writing Code
 
+<<<<<<< HEAD
 After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm run dev`.
 
 The local development server runs on `http://localhost:8080` by default. Please see the webpack documentation if you wish to change this, or add SSL support.
 
 Once the server is running you can edit any of the files in the `src` folder. Webpack will automatically recompile your code and then reload the browser.
+=======
+After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
+
+After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
+>>>>>>> 017481e (Updated to Phaser 3.50 and ES6 syntax)
 
 <<<<<<< HEAD
 ## Template Project Structure
@@ -95,6 +109,7 @@ You can write modern ES6+ JavaScript and Babel will transpile it to a version of
  ```
 
 ### Webpack
+<<<<<<< HEAD
 
 If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/config.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json`. Please see the [Webpack documentation](https://webpack.js.org/) for more information.
 
@@ -114,3 +129,13 @@ Created by [Phaser Studio](mailto:support@phaser.io). Powered by coffee, anime, 
 The Phaser logo and characters are &copy; 2011 - 2024 Phaser Studio Inc.
 
 All rights reserved.
+=======
+
+If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
+
+## Deploying Code
+
+After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
+
+If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
+>>>>>>> 017481e (Updated to Phaser 3.50 and ES6 syntax)

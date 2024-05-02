@@ -39,7 +39,7 @@
 }
 =======
   "name": "phaser3-project-template",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Phaser 3 Project Template",
   "main": "src/index.js",
   "scripts": {
@@ -72,7 +72,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "phaser": "^3.24.1"
+    "phaser": "^3.50.0"
   }
 }
 >>>>>>> 5609708 (Updated to Phaser 3.20.1)
