@@ -1,7 +1,12 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "template-webpack",
     "version": "3.1.1",
+=======
+    "name": "template-webpack",
+    "version": "3.0.0",
+>>>>>>> 4ff2702 (Updated with latest template code and examples. Version 3.0.0.)
     "main": "src/main.js",
     "scripts": {
         "dev": "webpack-dev-server --config webpack/config.js --open",
@@ -19,6 +24,7 @@
     },
     "homepage": "https://github.com/phaserjs/template-webpack#readme",
     "devDependencies": {
+<<<<<<< HEAD
         "@babel/core": "^7.23.9",
         "@babel/preset-env": "^7.23.9",
         "babel-loader": "^9.1.3",
@@ -77,3 +83,23 @@
   }
 }
 >>>>>>> 5609708 (Updated to Phaser 3.20.1)
+=======
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "babel-loader": "^9.1.3",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.3",
+        "raw-loader": "^4.0.2",
+        "terser-webpack-plugin": "^5.3.9",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1",
+        "webpack-merge": "^5.10.0"
+    },
+    "dependencies": {
+        "phaser": "^3.70.0"
+    }
+}
+>>>>>>> 4ff2702 (Updated with latest template code and examples. Version 3.0.0.)
