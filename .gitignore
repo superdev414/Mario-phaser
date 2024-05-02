@@ -5,11 +5,19 @@ Thumbs.db
 *.suo
 *.sublime-project
 *.sublime-workspace
+<<<<<<< HEAD
 *.vscode
+=======
+>>>>>>> bf0e272 (Added sample project files.)
 
 # Vendors
+node_modules
 node_modules/
 
 # Build
+<<<<<<< HEAD
 dist/
+=======
+build/
+>>>>>>> bf0e272 (Added sample project files.)
 /npm-debug.log
