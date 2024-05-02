@@ -6,12 +6,19 @@ const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const line = "---------------------------------------------------------";
 const msg = `❤️❤️❤️ Tell us about your game! - games@phaser.io ❤️❤️❤️`;
 process.stdout.write(`${line}\n${msg}\n${line}\n`);
 
 =======
 >>>>>>> 4ff2702 (Updated with latest template code and examples. Version 3.0.0.)
+=======
+const line = "---------------------------------------------------------";
+const msg = `💜💜💜 Tell us about your game! - games@phaser.io 💜💜💜`;
+process.stdout.write(`${line}\n${msg}\n${line}\n`);
+
+>>>>>>> b19c0e6 (update phaser msg)
 module.exports = {
     mode: "production",
     entry: "./src/main.js",
