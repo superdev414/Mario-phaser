@@ -57,6 +57,6 @@ Contribute to the vibrant community of Phaser developers. Share your projects, g
 
 The Phaser logo and characters are &copy; 2011 - 2024 Phaser Studio Inc.
 
-Created with ❤️ by Phaser Studio. Enjoy building your next great game!
+Created with ❤️ using Phaser Studio. Enjoy building your next great game!
 
 All rights reserved.
