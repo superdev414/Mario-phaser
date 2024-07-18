@@ -96,8 +96,9 @@ export class Game extends Scene {
     coins = this.physics.add.group({
       key: "coin",
       repeat: 18,
-      setXY: { x: 21, y: 0, stepX: 55 },
+      setXY: { x: 21, y: 100, stepX: 55 },
     });
+    
 
     coins.children.iterate(function (child) {
       child.play("spin");
