@@ -1,15 +1,15 @@
 import { Scene } from "phaser";
 
 export class Boot extends Scene {
-  constructor() {
-    super("Boot");
-  }
+	constructor() {
+		super("Boot");
+	}
 
-  preload() {
-    this.load.image("background", "assets/bg.png");
-  }
+	preload() {
+		this.load.image("background", "assets/images/background/bg.png");
+	}
 
-  create() {
-    this.scene.start("Preloader");
-  }
+	create() {
+		this.scene.start("Preloader");
+	}
 }
