@@ -200,7 +200,7 @@ function collectCoin(player, coin) {
 
 function hitBomb(player) {
 	this.physics.pause();
-	player.setTint(0x620000);
+	player.setTint(0xff0000);
 	player.anims.play("turn");
 	gameOver = true;
 	explosionSound.play();
