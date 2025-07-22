@@ -5,11 +5,11 @@ export class Boot extends Scene {
 		super("Boot");
 	}
 
-	preload() {
+	preload(): void {
 		this.load.image("background", "assets/images/background/bg.png");
 	}
 
-	create() {
+	create(): void {
 		this.scene.start("Preloader");
 	}
 }

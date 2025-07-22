@@ -5,7 +5,7 @@ export class MainMenu extends Scene {
 		super("MainMenu");
 	}
 
-	create() {
+	create(): void {
 		this.add.image(512, 384, "background");
 		this.add.image(512, 350, "logo").setScale(0.7);
 		this.add

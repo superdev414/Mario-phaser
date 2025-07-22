@@ -11,7 +11,7 @@ process.stdout.write(`${line}\n${msg}\n${line}\n`);
 
 module.exports = {
 	mode: "production",
-	entry: "./src/main.js",
+	entry: "./src/main.ts",
 	output: {
 		path: path.resolve(process.cwd(), "dist"),
 		filename: "./bundle.min.js",
@@ -22,8 +22,16 @@ module.exports = {
 		maxEntrypointSize: 2500000,
 		maxAssetSize: 1200000,
 	},
+	resolve: {
+		extensions: [".ts", ".tsx", ".js", ".jsx"],
+	},
 	module: {
 		rules: [
+			{
+				test: /\.tsx?$/,
+				use: "ts-loader",
+				exclude: /node_modules/,
+			},
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
