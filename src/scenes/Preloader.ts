@@ -5,12 +5,12 @@ export class Preloader extends Scene {
 		super("Preloader");
 	}
 
-	init() {
+	init(): void {
 		this.add.image(512, 384, "background");
 		this.add.rectangle(512, 384, 468, 32).setStrokeStyle(1, 0xffffff);
 	}
 
-	preload() {
+	preload(): void {
 		this.load.setPath("assets");
 		this.load.image("logo", "images/ui/game-logo.png");
 		this.load.image("sky", "images/background/sky.png");
@@ -30,7 +30,7 @@ export class Preloader extends Scene {
 		this.load.audio("explosionSound", "audio/bmb-ex-ii.mp3");
 	}
 
-	create() {
+	create(): void {
 		this.scene.start("MainMenu");
 	}
 }

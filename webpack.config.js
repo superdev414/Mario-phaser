@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
-	entry: "./src/main.js",
+	entry: "./src/main.ts",
 
 	output: {
 		path: path.resolve(__dirname, "build"),
@@ -12,8 +12,17 @@ module.exports = {
 		filename: "project.bundle.js",
 	},
 
+	resolve: {
+		extensions: [".ts", ".tsx", ".js", ".jsx"],
+	},
+
 	module: {
 		rules: [
+			{
+				test: /\.tsx?$/,
+				use: "ts-loader",
+				exclude: /node_modules/,
+			},
 			{
 				test: [/\.vert$/, /\.frag$/],
 				use: "raw-loader",
