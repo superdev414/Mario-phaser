@@ -1,5 +1,12 @@
 # 🎮 Jumper - A Phaser 3 Platformer Game
 
+![GitHub Pages Deploy](https://github.com/TorresjDev/Phaser-Game/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Phaser](https://img.shields.io/badge/Phaser-3.80.1-orange.svg)
+![Node](https://img.shields.io/badge/Node.js-18+-green.svg)
+
+## 🎮 [**PLAY GAME NOW!**](https://torresjdev.github.io/Phaser-Game/) 🚀
+
 ![Game Logo](/public/assets/images/ui/game-logo.png)
 
 ## 🚀 Description
@@ -11,9 +18,12 @@ Welcome to **Jumper**, an exciting platformer game where you control a nimble ch
 ## 📋 Table of Contents
 
 - [🎮 Jumper - A Phaser 3 Platformer Game](#-jumper---a-phaser-3-platformer-game)
+  - [🎮 **PLAY GAME NOW!** 🚀](#-play-game-now-)
   - [🚀 Description](#-description)
   - [📋 Table of Contents](#-table-of-contents)
   - [🔧 Features](#-features)
+  - [🌐 Live Demo \& Deployment](#-live-demo--deployment)
+    - [Deployment Status](#deployment-status)
   - [🗂 Project Structure](#-project-structure)
     - [Key Files:](#key-files)
   - [🔧 Installation](#-installation)
@@ -36,6 +46,19 @@ Welcome to **Jumper**, an exciting platformer game where you control a nimble ch
 - Retro-inspired pixel art 🔹️
 - Fully modular code structure for easy maintenance 🛠️
 - Transparent assets and organized folder structure 🎨
+
+---
+
+## 🌐 Live Demo & Deployment
+
+🎮 **Play Online**: [https://torresjdev.github.io/Phaser-Game/](https://torresjdev.github.io/Phaser-Game/)
+
+### Deployment Status
+
+- ✅ **GitHub Pages**: Automatically deployed from `main` branch
+- ✅ **CI/CD**: GitHub Actions workflow for seamless deployment
+- ✅ **Production Build**: Optimized webpack bundle
+- 🎯 **Auto Deploy**: Every push to `main` triggers new deployment
 
 ---
 
