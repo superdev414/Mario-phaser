@@ -1,7 +1,7 @@
 {
-	"name": "template-webpack",
+	"name": "ts-phaser-game-jumper",
 	"version": "3.1.1",
-	"main": "src/main.js",
+	"main": "src/main.ts",
 	"scripts": {
 		"dev": "webpack-dev-server --config webpack/config.js --open",
 		"build": "webpack --config webpack/config.prod.js",
@@ -9,15 +9,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/TorresjDev/Phaser-Game.git"
+		"url": "git+https://github.com/TorresjDev/TS-Phaser-Game-Jumper.git"
 	},
 	"author": "TorresjDev",
 	"license": "MIT",
 	"licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
 	"bugs": {
-		"url": "https://github.com/TorresjDev/Phaser-Game/issues"
+		"url": "https://github.com/TorresjDev/TS-Phaser-Game-Jumper/issues"
 	},
-	"homepage": "https://github.com/TorresjDev/Phaser-Game#readme",
+	"homepage": "https://github.com/TorresjDev/TS-Phaser-Game-Jumper#readme",
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
 		"@babel/preset-env": "^7.23.9",
