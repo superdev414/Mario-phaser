@@ -19,8 +19,35 @@ export class GameOver extends Scene {
 			})
 			.setOrigin(0.5);
 
-		this.input.once("pointerdown", () => {
-			this.scene.start("MainMenu");
-		});
+		this.setupNavigation();
+	}
+
+	private setupNavigation(): void {
+		const isMobile = this.sys.game.device.input.touch;
+
+		if (isMobile) {
+			// For mobile: Create a dedicated "Restart" button to avoid accidental touches
+			const restartButton = this.add
+				.rectangle(512, 600, 300, 80, 0xe74c3c)
+				.setStrokeStyle(4, 0xffffff)
+				.setInteractive({ cursor: "pointer" });
+
+			this.add
+				.text(512, 600, "RESTART", {
+					fontFamily: "Arial Black",
+					fontSize: 32,
+					color: "#ffffff",
+				})
+				.setOrigin(0.5);
+
+			restartButton.on("pointerdown", () => {
+				this.scene.start("MainMenu");
+			});
+		} else {
+			// Desktop: Any click restarts
+			this.input.once("pointerdown", () => {
+				this.scene.start("MainMenu");
+			});
+		}
 	}
 }

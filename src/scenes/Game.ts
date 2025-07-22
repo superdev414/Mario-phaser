@@ -11,6 +11,17 @@ let scoreText: Phaser.GameObjects.Text;
 let gameOver: boolean = false;
 let score: number = 0;
 
+// Mobile touch controls
+let leftButton: Phaser.GameObjects.Image;
+let rightButton: Phaser.GameObjects.Image;
+let jumpButton: Phaser.GameObjects.Image;
+let isMobile: boolean = false;
+
+// Touch control states
+let isLeftPressed: boolean = false;
+let isRightPressed: boolean = false;
+let isJumpPressed: boolean = false;
+
 // Custom interface for bombs with bounce tracking
 interface BombSprite extends Phaser.Physics.Arcade.Sprite {
 	bounceCount?: number;
@@ -136,9 +147,17 @@ export class Game extends Scene {
 			undefined,
 			this
 		);
-		this.input.once("pointerdown", () => {
-			this.scene.start("GameOver");
-		});
+
+		// Detect mobile device
+		isMobile = this.sys.game.device.input.touch;
+
+		// Setup mobile touch controls if on mobile device
+		if (isMobile) {
+			this.setupMobileControls();
+		}
+
+		// Setup scene navigation (mobile-aware)
+		this.setupSceneNavigation();
 	}
 
 	update(): void {
@@ -190,20 +209,150 @@ export class Game extends Scene {
 			return true;
 		}, this);
 
-		if (cursors.left.isDown) {
+		// Handle input - keyboard or touch controls
+		if ((cursors.left.isDown || isLeftPressed) && !gameOver) {
 			player.setVelocityX(-160);
 			player.anims.play("left", true);
-		} else if (cursors.right.isDown) {
+		} else if ((cursors.right.isDown || isRightPressed) && !gameOver) {
 			player.setVelocityX(160);
 			player.anims.play("right", true);
 		} else {
 			player.setVelocityX(0);
-			player.anims.play("turn");
+			if (!gameOver) {
+				player.anims.play("turn");
+			}
 		}
 
-		if (cursors.up.isDown && player.body!.touching.down) {
+		if (
+			(cursors.up.isDown || isJumpPressed) &&
+			player.body!.touching.down &&
+			!gameOver
+		) {
 			player.setVelocityY(-333);
 		}
+	}
+
+	private setupSceneNavigation(): void {
+		// For desktop: allow any click to navigate (keeping original behavior)
+		// For mobile: only allow navigation on game over or specific areas
+		if (!isMobile) {
+			// Desktop behavior - any click navigates (if desired)
+			// Currently disabled as it was going directly to GameOver
+		}
+		// Mobile devices will only navigate through game over logic
+	}
+
+	private setupMobileControls(): void {
+		const buttonStyle = {
+			alpha: 0.7,
+			scale: 1.2,
+		};
+
+		// Create left button
+		leftButton = this.add
+			.image(80, this.cameras.main.height - 100, "platform-sm")
+			.setScrollFactor(0)
+			.setInteractive()
+			.setAlpha(buttonStyle.alpha)
+			.setScale(0.8);
+
+		// Add left arrow text
+		this.add
+			.text(80, this.cameras.main.height - 100, "←", {
+				fontSize: "32px",
+				color: "#ffffff",
+				fontStyle: "bold",
+			})
+			.setOrigin(0.5)
+			.setScrollFactor(0);
+
+		// Create right button
+		rightButton = this.add
+			.image(200, this.cameras.main.height - 100, "platform-sm")
+			.setScrollFactor(0)
+			.setInteractive()
+			.setAlpha(buttonStyle.alpha)
+			.setScale(0.8);
+
+		// Add right arrow text
+		this.add
+			.text(200, this.cameras.main.height - 100, "→", {
+				fontSize: "32px",
+				color: "#ffffff",
+				fontStyle: "bold",
+			})
+			.setOrigin(0.5)
+			.setScrollFactor(0);
+
+		// Create jump button
+		jumpButton = this.add
+			.image(
+				this.cameras.main.width - 80,
+				this.cameras.main.height - 100,
+				"platform-sm"
+			)
+			.setScrollFactor(0)
+			.setInteractive()
+			.setAlpha(buttonStyle.alpha)
+			.setScale(0.8);
+
+		// Add jump text
+		this.add
+			.text(this.cameras.main.width - 80, this.cameras.main.height - 100, "↑", {
+				fontSize: "32px",
+				color: "#ffffff",
+				fontStyle: "bold",
+			})
+			.setOrigin(0.5)
+			.setScrollFactor(0);
+
+		// Left button events
+		leftButton.on("pointerdown", () => {
+			isLeftPressed = true;
+			leftButton.setAlpha(1);
+		});
+
+		leftButton.on("pointerup", () => {
+			isLeftPressed = false;
+			leftButton.setAlpha(buttonStyle.alpha);
+		});
+
+		leftButton.on("pointerout", () => {
+			isLeftPressed = false;
+			leftButton.setAlpha(buttonStyle.alpha);
+		});
+
+		// Right button events
+		rightButton.on("pointerdown", () => {
+			isRightPressed = true;
+			rightButton.setAlpha(1);
+		});
+
+		rightButton.on("pointerup", () => {
+			isRightPressed = false;
+			rightButton.setAlpha(buttonStyle.alpha);
+		});
+
+		rightButton.on("pointerout", () => {
+			isRightPressed = false;
+			rightButton.setAlpha(buttonStyle.alpha);
+		});
+
+		// Jump button events
+		jumpButton.on("pointerdown", () => {
+			isJumpPressed = true;
+			jumpButton.setAlpha(1);
+		});
+
+		jumpButton.on("pointerup", () => {
+			isJumpPressed = false;
+			jumpButton.setAlpha(buttonStyle.alpha);
+		});
+
+		jumpButton.on("pointerout", () => {
+			isJumpPressed = false;
+			jumpButton.setAlpha(buttonStyle.alpha);
+		});
 	}
 
 	private collectCoin(
