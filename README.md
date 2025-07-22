@@ -5,7 +5,7 @@
 ![Phaser](https://img.shields.io/badge/Phaser-3.80.1-orange.svg)
 ![Node](https://img.shields.io/badge/Node.js-18+-green.svg)
 
-## 🎮 [**PLAY GAME NOW!**](https://torresjdev.github.io/Phaser-Game/) 🚀
+## 🎮 [**PLAY GAME NOW!**](https://torresjdev.github.io/JS-Phaser-Game-Jumper/) 🚀
 
 ![Game Logo](/public/assets/images/ui/game-logo.png)
 
@@ -51,7 +51,7 @@ Welcome to **Jumper**, an exciting platformer game where you control a nimble ch
 
 ## 🌐 Live Demo & Deployment
 
-🎮 **Play Online**: [https://torresjdev.github.io/Phaser-Game/](https://torresjdev.github.io/Phaser-Game/)
+🎮 **Play Online**: [https://torresjdev.github.io/JS-Phaser-Game-Jumper/](https://torresjdev.github.io/JS-Phaser-Game-Jumper/)
 
 ### Deployment Status
 
