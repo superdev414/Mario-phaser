@@ -56,4 +56,17 @@ module.exports = {
 			template: "./index.html",
 		}),
 	],
+	devServer: {
+		host: "0.0.0.0", // Allow external connections
+		port: 8080,
+		allowedHosts: "all", // Allow all hosts
+		client: {
+			overlay: true,
+		},
+		static: {
+			directory: path.join(__dirname, "../public"),
+		},
+		compress: true,
+		hot: true,
+	},
 };
