@@ -125,7 +125,21 @@ export class Game extends Scene {
 
 		this.physics.add.collider(player, platforms);
 		this.physics.add.collider(coins, platforms);
-		this.physics.add.collider(bombs, platforms);
+		this.physics.add.collider(
+			bombs,
+			platforms,
+			function (bomb, platform) {
+				// Count bounces when bomb hits a platform
+				if (bomb.bounceCount !== undefined) {
+					bomb.bounceCount++;
+					if (bomb.bounceCount >= bomb.maxBounces) {
+						bomb.destroy();
+					}
+				}
+			},
+			null,
+			this
+		);
 		this.physics.add.overlap(player, coins, collectCoin, null, this);
 		this.physics.add.collider(player, bombs, hitBomb, null, this);
 		this.input.once("pointerdown", () => {
@@ -137,9 +151,46 @@ export class Game extends Scene {
 		if (gameOver) {
 			return;
 		}
+
+		// Handle player wrapping - allow wrapping on all edges like Pac-Man
 		this.physics.world.wrap(player, 0);
+
+		// Handle bomb wrapping - horizontal wrapping and vertical boundaries
 		bombs.children.each(function (bomb) {
-			this.physics.world.wrap(bomb, 0);
+			// Only wrap horizontally
+			if (bomb.x < -bomb.width) {
+				bomb.x = this.cameras.main.width + bomb.width;
+			} else if (bomb.x > this.cameras.main.width + bomb.width) {
+				bomb.x = -bomb.width;
+			}
+
+			// Prevent bombs from going above screen - bounce them back down
+			if (bomb.y < 0) {
+				bomb.y = 0;
+				bomb.setVelocityY(Math.abs(bomb.body.velocity.y)); // Reverse to downward
+				// Count this as a bounce
+				if (bomb.bounceCount !== undefined) {
+					bomb.bounceCount++;
+					if (bomb.bounceCount >= bomb.maxBounces) {
+						bomb.destroy();
+						return; // Exit early since bomb is destroyed
+					}
+				}
+			}
+
+			// Prevent bombs from going below screen - bounce them back up
+			if (bomb.y > this.cameras.main.height) {
+				bomb.y = this.cameras.main.height;
+				bomb.setVelocityY(-Math.abs(bomb.body.velocity.y)); // Reverse to upward
+				// Count this as a bounce
+				if (bomb.bounceCount !== undefined) {
+					bomb.bounceCount++;
+					if (bomb.bounceCount >= bomb.maxBounces) {
+						bomb.destroy();
+						return; // Exit early since bomb is destroyed
+					}
+				}
+			}
 		}, this);
 
 		if (cursors.left.isDown) {
@@ -185,12 +236,20 @@ function collectCoin(player, coin) {
 			? Phaser.Math.Between(275, 600)
 			: Phaser.Math.Between(0, 275);
 
-	var bomb = bombs.create(x, Phaser.Math.Between(9, 21), "bomb");
-	bomb.setBounce(1);
+	var bomb = bombs.create(x, Phaser.Math.Between(9, 50), "bomb");
+	bomb.setBounce(0.8); // Reduced bounce to prevent excessive jumping
 	bomb.setVelocity(
-		Phaser.Math.Between(-175, 175),
-		Phaser.Math.Between(50, 200)
+		Phaser.Math.Between(-150, 150), // Reduced horizontal velocity
+		Phaser.Math.Between(20, 100) // Reduced vertical velocity
 	);
+
+	// Add some drag to make bombs feel more realistic
+	bomb.setDrag(10);
+
+	// Initialize bounce counter for this bomb
+	bomb.bounceCount = 0;
+	bomb.maxBounces = 30;
+
 	if (coins.countActive(true) === 0) {
 		coins.children.iterate(function (child) {
 			child.enableBody(true, child.x, 30, true, true);
