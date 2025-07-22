@@ -15,7 +15,7 @@ module.exports = {
 	output: {
 		path: path.resolve(process.cwd(), "dist"),
 		filename: "./bundle.min.js",
-		publicPath: "/JS-Phaser-Game-Jumper/",
+		publicPath: "/TS-Phaser-Game-Jumper/",
 	},
 	devtool: false,
 	performance: {

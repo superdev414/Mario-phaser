@@ -12,7 +12,8 @@ export class Preloader extends Scene {
 
 	preload(): void {
 		this.load.setPath("assets");
-		this.load.image("logo", "images/ui/game-logo.png");
+
+		this.load.image("logo", "images/ui/jumper-title.png");
 		this.load.image("sky", "images/background/sky.png");
 		this.load.image("platform-sm", "images/platforms/platform-sm-i.png");
 		this.load.image("platform-lg", "images/platforms/platform-lg-i.png");
