@@ -19,8 +19,35 @@ export class MainMenu extends Scene {
 			})
 			.setOrigin(0.5);
 
-		this.input.once("pointerdown", () => {
-			this.scene.start("Game");
-		});
+		this.setupNavigation();
+	}
+
+	private setupNavigation(): void {
+		const isMobile = this.sys.game.device.input.touch;
+
+		if (isMobile) {
+			// For mobile: Create a dedicated "Start Game" button to avoid accidental touches
+			const startButton = this.add
+				.rectangle(512, 600, 300, 80, 0x4a90e2)
+				.setStrokeStyle(4, 0xffffff)
+				.setInteractive({ cursor: "pointer" });
+
+			this.add
+				.text(512, 600, "START GAME", {
+					fontFamily: "Arial Black",
+					fontSize: 32,
+					color: "#ffffff",
+				})
+				.setOrigin(0.5);
+
+			startButton.on("pointerdown", () => {
+				this.scene.start("Game");
+			});
+		} else {
+			// Desktop: Any click starts the game
+			this.input.once("pointerdown", () => {
+				this.scene.start("Game");
+			});
+		}
 	}
 }
