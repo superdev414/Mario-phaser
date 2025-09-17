@@ -157,6 +157,7 @@ export class Game extends Scene {
 		}
 
 		// Setup scene navigation (mobile-aware)
+		this.input.addPointer(2);
 		this.setupSceneNavigation();
 	}
 
@@ -244,67 +245,37 @@ export class Game extends Scene {
 
 	private setupMobileControls(): void {
 		const buttonStyle = {
-			alpha: 0.7,
-			scale: 1.2,
+			alpha: 1,
+			scale: 1.5,
 		};
 
 		// Create left button
 		leftButton = this.add
-			.image(80, this.cameras.main.height - 100, "platform-sm")
+			.image(100, this.cameras.main.height - 100, "left-button")
 			.setScrollFactor(0)
 			.setInteractive()
 			.setAlpha(buttonStyle.alpha)
-			.setScale(0.8);
-
-		// Add left arrow text
-		this.add
-			.text(80, this.cameras.main.height - 100, "←", {
-				fontSize: "32px",
-				color: "#ffffff",
-				fontStyle: "bold",
-			})
-			.setOrigin(0.5)
-			.setScrollFactor(0);
+			.setScale(2);
 
 		// Create right button
 		rightButton = this.add
-			.image(200, this.cameras.main.height - 100, "platform-sm")
+			.image(250, this.cameras.main.height - 100, "right-button")
 			.setScrollFactor(0)
 			.setInteractive()
 			.setAlpha(buttonStyle.alpha)
-			.setScale(0.8);
-
-		// Add right arrow text
-		this.add
-			.text(200, this.cameras.main.height - 100, "→", {
-				fontSize: "32px",
-				color: "#ffffff",
-				fontStyle: "bold",
-			})
-			.setOrigin(0.5)
-			.setScrollFactor(0);
+			.setScale(2);
 
 		// Create jump button
 		jumpButton = this.add
 			.image(
 				this.cameras.main.width - 80,
 				this.cameras.main.height - 100,
-				"platform-sm"
+				"jump-button"
 			)
 			.setScrollFactor(0)
 			.setInteractive()
 			.setAlpha(buttonStyle.alpha)
-			.setScale(0.8);
-
-		// Add jump text
-		this.add
-			.text(this.cameras.main.width - 80, this.cameras.main.height - 100, "↑", {
-				fontSize: "32px",
-				color: "#ffffff",
-				fontStyle: "bold",
-			})
-			.setOrigin(0.5)
-			.setScrollFactor(0);
+			.setScale(2);
 
 		// Left button events
 		leftButton.on("pointerdown", () => {

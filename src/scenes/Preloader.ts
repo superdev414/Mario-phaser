@@ -17,6 +17,9 @@ export class Preloader extends Scene {
 		this.load.image("sky", "images/background/sky.png");
 		this.load.image("platform-sm", "images/platforms/platform-sm-i.png");
 		this.load.image("platform-lg", "images/platforms/platform-lg-i.png");
+		this.load.image("left-button", "images/controls/icons8-left-arrow.png");
+		this.load.image("right-button", "images/controls/icons8-right-arrow.png");
+		this.load.image("jump-button", "images/controls/icons8-up-arrow.png");
 		this.load.image("floor", "images/platforms/floor.png");
 		this.load.image("bomb", "images/items/bomb-i.png");
 		this.load.spritesheet("coin", "images/items/coin.png", {
