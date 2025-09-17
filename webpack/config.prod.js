@@ -78,7 +78,7 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{ from: "public/assets", to: "assets" },
-				{ from: "public/assets/images/ui/dev.svg", to: "dev.svg" },
+				{ from: "public/assets/images/ui/favicon.svg", to: "favicon.svg" },
 				{ from: "public/style.css", to: "style.css" },
 			],
 		}),
