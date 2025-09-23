@@ -9,15 +9,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/TorresjDev/TS-Phaser-Game-Jumper.git"
+		"url": "git+https://https://github.com/superdev414/Mario-phaser"
 	},
-	"author": "TorresjDev",
+	"author": "superdev414",
 	"license": "MIT",
 	"licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
 	"bugs": {
-		"url": "https://github.com/TorresjDev/TS-Phaser-Game-Jumper/issues"
+		"url": "https://github.com/superdev414/Mario-phaser/issues"
 	},
-	"homepage": "https://github.com/TorresjDev/TS-Phaser-Game-Jumper#readme",
+	"homepage": "https://github.com/superdev414/Mario-phaser#readme",
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
 		"@babel/preset-env": "^7.23.9",

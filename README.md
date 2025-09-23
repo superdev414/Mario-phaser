@@ -1,13 +1,13 @@
 # 🎮 Jumper - A Professional TypeScript Phaser 3 Platformer
 
-![GitHub Pages Deploy](https://github.com/TorresjDev/TS-Phaser-Game-Jumper/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+![GitHub Pages Deploy](https://github.com/superdev414/Mario-phaser/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Phaser](https://img.shields.io/badge/Phaser-3.80.1-orange.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-68.3%25-3178C6.svg)
 ![Webpack](https://img.shields.io/badge/Webpack-5.90.3-8DD6F9.svg)
 ![Node](https://img.shields.io/badge/Node.js-18+-green.svg)
 
-## 🎮 [**PLAY GAME NOW!**](https://torresjdev.github.io/TS-Phaser-Game-Jumper/) 🚀
+## 🎮 [**PLAY GAME NOW!**](https://superdev414.github.io/Mario-phaser/) 🚀
 
 ![Game Logo](/public/assets/images/ui/jumper-title.png)
 
@@ -59,7 +59,7 @@ This is a **fully modern, TypeScript-powered** platformer game that showcases pr
 
 ## 🌐 Live Demo & Deployment
 
-🎮 **Play Online**: [https://torresjdev.github.io/TS-Phaser-Game-Jumper/](https://torresjdev.github.io/TS-Phaser-Game-Jumper/)
+🎮 **Play Online**: [https://superdev414.github.io/Mario-phaser/](https://superdev414.github.io/Mario-phaser/)
 
 ### Deployment Pipeline
 
@@ -118,7 +118,7 @@ TS-Phaser-Game-Jumper/
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/TorresjDev/TS-Phaser-Game-Jumper.git
+   git clone https://github.com/superdev414/Mario-phaser.git
    cd TS-Phaser-Game-Jumper
    ```
 
@@ -284,7 +284,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### 🎮 Ready to Play?
 
-**[LAUNCH GAME →](https://torresjdev.github.io/TS-Phaser-Game-Jumper/)**
+**[LAUNCH GAME →](https://superdev414.github.io/Mario-phaser/)**
 
 _Built with ❤️ using TypeScript and Phaser 3_
 
