@@ -74,7 +74,7 @@ This is a **fully modern, TypeScript-powered** platformer game that showcases pr
 ## � Project Architecture
 
 ```
-TS-Phaser-Game-Jumper/
+Mario-phaser/
 ├── 📂 src/                     # TypeScript source code
 │   ├── 📂 scenes/              # Game scenes (TypeScript)
 │   │   ├── Boot.ts             # Initial boot sequence

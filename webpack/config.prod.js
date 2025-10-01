@@ -14,8 +14,8 @@ module.exports = {
 	entry: "./src/main.ts",
 	output: {
 		path: path.resolve(process.cwd(), "dist"),
-		filename: "./bundle.min.js",
-		publicPath: "/TS-Phaser-Game-Jumper/",
+		filename: "bundle.min.js",
+		publicPath: "/Mario-phaser/",
 	},
 	devtool: false,
 	performance: {
