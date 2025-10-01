@@ -45,7 +45,12 @@ module.exports = {
 			},
 			{
 				test: /\.(gif|png|jpe?g|svg|xml|glsl)$/i,
-				use: "file-loader",
+				use: {
+					loader: "file-loader",
+					options: {
+						publicPath: "/Mario-phaser/",
+					},
+				},
 			},
 		],
 	},
@@ -63,6 +68,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new webpack.DefinePlugin({
+			"process.env.NODE_ENV": JSON.stringify("production"),
 			"typeof CANVAS_RENDERER": JSON.stringify(true),
 			"typeof WEBGL_RENDERER": JSON.stringify(true),
 			"typeof WEBGL_DEBUG": JSON.stringify(false),

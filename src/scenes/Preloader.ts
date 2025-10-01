@@ -1,4 +1,5 @@
 import { Scene } from "phaser";
+import { CONFIG } from "../config";
 
 export class Preloader extends Scene {
 	constructor() {
@@ -11,7 +12,7 @@ export class Preloader extends Scene {
 	}
 
 	preload(): void {
-		this.load.setPath("assets");
+		this.load.setPath(`${CONFIG.ASSETS_BASE_URL}assets`);
 
 		this.load.image("logo", "images/ui/jumper-title.png");
 		this.load.image("sky", "images/background/sky.png");

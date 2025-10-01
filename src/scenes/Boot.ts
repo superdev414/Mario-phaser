@@ -1,4 +1,5 @@
 import { Scene } from "phaser";
+import { CONFIG } from "../config";
 
 export class Boot extends Scene {
 	constructor() {
@@ -6,7 +7,7 @@ export class Boot extends Scene {
 	}
 
 	preload(): void {
-		this.load.image("background", "assets/images/background/bg.png");
+		this.load.image("background", `${CONFIG.ASSETS_BASE_URL}assets/images/background/bg.png`);
 	}
 
 	create(): void {
